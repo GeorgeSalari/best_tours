@@ -31,6 +31,15 @@ gem "figaro"
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
 
+gem 'activeadmin'
+
+# Plus integrations with:
+gem 'devise'
+gem 'cancan' # or cancancan
+gem 'draper'
+gem 'pundit'
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
