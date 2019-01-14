@@ -4801,3 +4801,7 @@ p.mail a {
 .navbar .menu-group.d-flex.justify-content-end {
   display: none !important;
 }
+
+.asana-banner-content {
+  height: 500px;
+}
