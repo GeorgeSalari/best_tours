@@ -281,6 +281,16 @@
   .price-table thead tr th:nth-child(2) {
     display: none;
   }
+  .modal-header button.close {
+    right: 10px;
+    top: 4px;
+  }
+  .modal-header button.close span {
+    color: #00549C;
+  }
+  #orderTour .modal-content {
+    margin: 20px auto;
+  }
 }
 
 @media (max-width: 479px) {
@@ -380,5 +390,13 @@
   }
   .rectangle-7 h3 {
     width: 100%;
+  }
+}
+
+@media (max-width: 330px) {
+  .price-container > .col-4.adult-price-container,
+  .price-container > .col-4.child-price-container {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
