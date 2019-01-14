@@ -72,6 +72,9 @@
 }
 
 @media (max-width: 767px) {
+  .section-150 {
+    padding-top: 50px;
+  }
   .header-17 .total-header-area {
     background-color: transparent;
   }
@@ -278,6 +281,16 @@
   .price-table thead tr th:nth-child(2) {
     display: none;
   }
+  .modal-header button.close {
+    right: 10px;
+    top: 4px;
+  }
+  .modal-header button.close span {
+    color: #00549C;
+  }
+  #orderTour .modal-content {
+    margin: 20px auto;
+  }
 }
 
 @media (max-width: 479px) {
@@ -332,6 +345,30 @@
     flex: 0 0 66.66667%;
     max-width: 66.66667%;
   }
+  .tour-container {
+    height: fit-content;
+  }
+  .tour-container,
+  .imagesContainer > a > img {
+    width: 100%;
+  }
+  .imagesContainer {
+    min-height: fit-content;
+  }
+  .imagesContainer > p:last-of-type {
+    top: auto;
+    bottom: 10px;
+  }
+  .imagesContainer > button {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .buttonsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+  }
   #new_order .formButtonsContainer {
     width: 100% !important;
   }
@@ -353,5 +390,13 @@
   }
   .rectangle-7 h3 {
     width: 100%;
+  }
+}
+
+@media (max-width: 330px) {
+  .price-container > .col-4.adult-price-container,
+  .price-container > .col-4.child-price-container {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
