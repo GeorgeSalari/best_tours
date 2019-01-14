@@ -333,6 +333,13 @@
     right: 20px;
     transform: translateY(-50%);
   }
+  .asana-banner .main-container .contact-info .viber-whatsapp-telegram {
+    display: inherit;
+    margin: 0;
+  }
+  .asana-banner .main-container .contact-info .viber-whatsapp-telegram img {
+    height: 20px;
+  }
 }
 
 @media (max-width: 400px) {
