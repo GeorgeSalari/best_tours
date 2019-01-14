@@ -211,6 +211,7 @@
             </div>
             <div class='<%= !comment.images.empty? ? "col-4 comment-with-images" : "col-8" %>'>
               <p><span><%= comment.customer_name %></span> <%= comment.created_at %></p>
+              <p><span>Экскурсия:</span> <%= find_tour(comment.tour_id, comment.tour_type).title %></p>
               <p><%= comment.comment %></p>
             </div>
             <% if !comment.images.empty? %>

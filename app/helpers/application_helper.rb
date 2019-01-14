@@ -35,6 +35,27 @@ module ApplicationHelper
     end
   end
 
+  def find_tour(product_id, product_type)
+    case product_type
+    when 'SeaTour'
+      SeaTour.find(product_id)
+    when 'LandTour'
+      LandTour.find(product_id)
+    when 'EveningShow'
+      EveningShow.find(product_id)
+    when 'PhuketTour'
+      PhuketTour.find(product_id)
+    when 'AviaTour'
+      AviaTour.find(product_id)
+    when 'Boat'
+      Boat.find(product_id)
+    when 'Shop'
+      Shop.find(product_id)
+    when 'StaticPage'
+      StaticPage.find(product_id)
+    end
+  end
+
   def ferries_path
     tour = SeaTour.where(title: "Паромы на острова").first
     if tour != nil
