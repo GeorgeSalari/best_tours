@@ -9,9 +9,9 @@
           <p class="tourTitle"><%= tour.title %></p>
           <p class="main-price-container">
             <%= image_tag 'user.svg' %>
-            B <%= tour.adult_price %>
+            ฿ <%= tour.adult_price %>
             <%= image_tag 'kids-couple.svg' %>
-            B <%= tour.child_price %>
+            ฿ <%= tour.child_price %>
           </p>
           <button data-toggle="modal" data-target="#orderTour" class="orderTourButton" data-title="<%= tour.title %>" data-adult="<%= tour.adult_price %>" data-productType="<%= product_type %>"" data-productId="<%= tour.id %>" data-child="<%= tour.child_price %>">Заказать</button>
 
