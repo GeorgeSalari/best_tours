@@ -27,4 +27,5 @@ Rails.application.routes.draw do
   get '/wedding', to: 'static_pages#wedding'
   get '/spa', to: 'static_pages#spa'
   post '/commet', to: 'comments#create'
+  get '/google3449e5b26396062c.html', to: 'static_pages#google_index'
 end
