@@ -61,7 +61,7 @@ module ApplicationHelper
     if tour != nil
       sea_tour_path(tour)
     else
-      sea_tour_path(SeaTour.first)
+      # sea_tour_path(SeaTour.first)
     end
   end
 
