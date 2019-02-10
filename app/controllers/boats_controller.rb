@@ -13,6 +13,8 @@ class BoatsController < ApplicationController
   # GET /boats/1.json
   def show
     @comments = Comment.where(tour_type: "Boat", tour_id: params[:id])
+    @title = @boat.page_title
+    @description = @boat.meta_description
   end
 
   # GET /boats/new
@@ -100,6 +102,6 @@ class BoatsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def boat_params
-      params.require(:boat).permit(:title, :short_content, :content, :adult_price, :order_number, :child_price, {images: []})
+      params.require(:boat).permit(:meta_description, :page_title, :title, :short_content, :content, :adult_price, :order_number, :child_price, {images: []})
     end
 end

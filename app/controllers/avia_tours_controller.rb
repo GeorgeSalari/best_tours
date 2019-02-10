@@ -13,6 +13,8 @@ class AviaToursController < ApplicationController
   # GET /avia_tours/1.json
   def show
     @comments = Comment.where(tour_type: "AviaTour", tour_id: params[:id])
+    @title = @avia_tour.page_title
+    @description = @avia_tour.meta_description
   end
 
   # GET /avia_tours/new
@@ -101,6 +103,6 @@ class AviaToursController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def avia_tour_params
-      params.require(:avia_tour).permit(:title, :short_content, :content, :adult_price, :order_number, :child_price, {images: []})
+      params.require(:avia_tour).permit(:meta_description, :page_title, :title, :short_content, :content, :adult_price, :order_number, :child_price, {images: []})
     end
 end

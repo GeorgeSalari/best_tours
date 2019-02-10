@@ -13,6 +13,8 @@ class EveningShowsController < ApplicationController
   # GET /evening_shows/1.json
   def show
     @comments = Comment.where(tour_type: "EveningShow", tour_id: params[:id])
+    @title = @evening_show.page_title
+    @description = @evening_show.meta_description
   end
 
   # GET /evening_shows/new
@@ -101,6 +103,6 @@ private
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def evening_show_params
-    params.require(:evening_show).permit(:title, :short_content, :content, :adult_price, :order_number, :child_price, {images: []})
+    params.require(:evening_show).permit(:meta_description, :page_title, :title, :short_content, :content, :adult_price, :order_number, :child_price, {images: []})
   end
 end

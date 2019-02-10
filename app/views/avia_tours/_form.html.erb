@@ -59,6 +59,20 @@
     </div>
   </div>
 
+  <div class="form-group row">
+    <%= form.label "Название страницы:", class: "col-2 col-form-label" %>
+    <div class="col-10">
+      <%= form.text_field :page_title, class: "form-control"  %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label "Описание страницы:", class: "col-2 col-form-label" %>
+    <div class="col-10">
+      <%= form.text_area :meta_description, class: "form-control"  %>
+    </div>
+  </div>
+
   <div class="actions">
       <%= form.submit %>
   </div>

@@ -13,6 +13,8 @@ class LandToursController < ApplicationController
   # GET /land_tours/1.json
   def show
     @comments = Comment.where(tour_type: "LandTour", tour_id: params[:id])
+    @title = @land_tour.page_title
+    @description = @land_tour.meta_description
   end
 
   # GET /land_tours/new
@@ -101,6 +103,6 @@ private
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def land_tour_params
-    params.require(:land_tour).permit(:title, :short_content, :content, :adult_price, :order_number, :child_price, {images: []})
+    params.require(:land_tour).permit(:meta_description, :page_title, :title, :short_content, :content, :adult_price, :order_number, :child_price, {images: []})
   end
 end

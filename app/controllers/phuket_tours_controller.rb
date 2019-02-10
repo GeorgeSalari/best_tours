@@ -6,13 +6,15 @@ class PhuketToursController < ApplicationController
   # GET /phuket_tours
   # GET /phuket_tours.json
   def index
-    @phuket_tour = PhuketTour.order(order_number: :asc)
+    @phuket_tours = PhuketTour.order(order_number: :asc)
   end
 
   # GET /phuket_tours/1
   # GET /phuket_tours/1.json
   def show
     @comments = Comment.where(tour_type: "PhuketTour", tour_id: params[:id])
+    @title = @phuket_tour.page_title
+    @description = @phuket_tour.meta_description
   end
 
   # GET /phuket_tours/new
@@ -101,6 +103,6 @@ class PhuketToursController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def phuket_tour_params
-      params.require(:phuket_tour).permit(:title, :short_content, :content, :adult_price, :order_number, :child_price, {images: []})
+      params.require(:phuket_tour).permit(:meta_description, :page_title, :title, :short_content, :content, :adult_price, :order_number, :child_price, {images: []})
     end
 end

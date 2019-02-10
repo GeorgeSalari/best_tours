@@ -13,6 +13,8 @@ class SeaToursController < ApplicationController
   # GET /sea_tours/1.json
   def show
     @comments = Comment.where(tour_type: "SeaTour", tour_id: params[:id])
+    @title = @sea_tour.page_title
+    @description = @sea_tour.meta_description
   end
 
   # GET /sea_tours/new
@@ -101,6 +103,6 @@ private
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def sea_tour_params
-    params.require(:sea_tour).permit(:title, :short_content, :content, :adult_price, :order_number, :child_price, {images: []})
+    params.require(:sea_tour).permit(:meta_description, :page_title, :title, :short_content, :content, :adult_price, :order_number, :child_price, {images: []})
   end
 end
