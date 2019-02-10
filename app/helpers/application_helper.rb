@@ -30,6 +30,20 @@ module ApplicationHelper
       boat_path(tour)
     when 'shop_path'
       shop_path(tour)
+    when 'SeaTour'
+      sea_tour_path(tour)
+    when 'LandTour'
+      land_tour_path(tour)
+    when 'EveningShow'
+      evening_show_path(tour)
+    when 'PhuketTour'
+      phuket_tour_path(tour)
+    when 'AviaTour'
+      avia_tour_path(tour)
+    when 'Boat'
+      boat_path(tour)
+    when 'Shop'
+      shop_path(tour)
     else
       sea_tour_path(tour)
     end
@@ -68,6 +82,12 @@ module ApplicationHelper
   def show_svg(path)
     File.open("app/assets/images/#{path}", "rb") do |file|
       raw file.read
+    end
+  end
+
+  def current_user
+    if session[:user_id]
+      @current_user = User.find_by(id: session[:user_id])
     end
   end
 end

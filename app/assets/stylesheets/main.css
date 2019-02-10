@@ -4429,6 +4429,10 @@ td, th {
   margin-bottom: 0;
 }
 
+.reviews-block .col-8 a {
+  color: red;
+}
+
 .reviews-block .images-container {
   width: 30%;
   padding: 0;
