@@ -66,8 +66,8 @@
               </div>
             </div>
           <% end %>
-          <div class="col-1 text-center <%= 'right-arrow-container' if comments.length > 1 %> arrow-container-right">
-            <% if com_index.even? && comments.length > 1 %>
+          <div class="col-1 text-center <%= 'right-arrow-container' if comments.length > 2 %> arrow-container-right">
+            <% if com_index.even? && comments.length > 2 %>
               <%= image_tag('down-chevron.svg', class: 'right-arrow') %>
             <% end %>
           </div>
