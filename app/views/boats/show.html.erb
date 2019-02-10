@@ -71,6 +71,7 @@
     <p><%= @boat.content.html_safe %></p>
   </div>
   <div class="form-container">
+    <p class="text-center order-form-title">Забронировать экскурсию</p>
     <%= render partial: 'shared/order_tour_form', :locals => { product_type: "Boat", product_id: @boat.id} %>
   </div>
 
