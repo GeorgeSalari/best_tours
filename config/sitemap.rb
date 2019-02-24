@@ -1,11 +1,17 @@
 # Change this to your host. See the readme at https://github.com/lassebunk/dynamic_sitemaps
 # for examples of multiple hosts and folders.
 # Set the host name for URL creation
-# SitemapGenerator::Sitemap.default_host = "https://www.budget-tour.ru"
+SitemapGenerator::Sitemap.default_host = "https://www.budget-tour.ru"
 SitemapGenerator::Sitemap.sitemaps_host = "https://s3-#{ENV['AWS_REGION']}.amazonaws.com/#{ENV['S3_BUCKET_NAME']}/"
 SitemapGenerator::Sitemap.public_path = 'tmp/'
 SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
-SitemapGenerator::Sitemap.adapter = SitemapGenerator::WaveAdapter.new
+SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter.new( 
+	aws_access_key_id: ENV["AWS_ACCESS_KEY_ID"],
+	aws_secret_access_key: ENV["AWS_SECRET_KEY"],
+	fog_provider: 'AWS',
+	fog_directory: ENV["S3_BUCKET_NAME"],
+	fog_region: ENV["AWS_REGION"]
+)
 
 SitemapGenerator::Sitemap.create do
 	#  url root_url, last_mod: Time.now, change_freq: "daily", priority: 1.0
