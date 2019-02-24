@@ -1,8 +1,13 @@
 # Change this to your host. See the readme at https://github.com/lassebunk/dynamic_sitemaps
 # for examples of multiple hosts and folders.
-host "www.example.com"
+# Set the host name for URL creation
+SitemapGenerator::Sitemap.default_host = "http://www.budget-tour.ru"
+SitemapGenerator::Sitemap.sitemaps_host = "http://s3.amazonaws.com/#{ENV['S3_BUCKET_NAME']}/"
+SitemapGenerator::Sitemap.public_path = 'tmp/'
+SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
+SitemapGenerator::Sitemap.adapter = SitemapGenerator::WaveAdapter.new
 
-sitemap :site do
+SitemapGenerator::Sitemap.create do
   url root_url, last_mod: Time.now, change_freq: "daily", priority: 1.0
   url shops_url
   Shop.all.each do |shop|
