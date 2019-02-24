@@ -77,44 +77,44 @@ SitemapGenerator::Sitemap.create do
 
  	add shops_path
  	Shop.find_each do |shop|
-   add shop_path
+   add shop_path(shop)
   end
 
   add boats_path
   Boat.find_each do |boat|
-   add boat_path
+   add boat_path(boat)
   end
 
   add carts_path
 
   add individual_tours_path
   IndividualTour.find_each do |individual_tour|
-   add individual_tour_path
+   add individual_tour_path(individual_tour)
   end
 
   add evening_shows_path
   EveningShow.find_each do |evening_show|
-   add evening_show_path
+   add evening_show_path(evening_show)
   end
 
   add avia_tours_path
   AviaTour.find_each do |avia_tour|
-   add avia_tour_path
+   add avia_tour_path(avia_tour)
   end
 
   add land_tours_path
   LandTour.find_each do |land_tour|
-   add land_tour_path
+   add land_tour_path(land_tour)
   end
 
   add phuket_tours_path
   PhuketTour.find_each do |phuket_tour|
-   add phuket_tour_path
+   add phuket_tour_path(phuket_tour)
   end
 
   add sea_tours_path
   SeaTour.find_each do |sea_tour|
-   add sea_tour_path
+   add sea_tour_path(sea_tour)
   end
 
   add prices_path
