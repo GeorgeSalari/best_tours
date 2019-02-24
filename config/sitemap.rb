@@ -1,71 +1,137 @@
 # Change this to your host. See the readme at https://github.com/lassebunk/dynamic_sitemaps
 # for examples of multiple hosts and folders.
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "http://www.budget-tour.ru"
-SitemapGenerator::Sitemap.sitemaps_host = "http://s3.amazonaws.com/#{ENV['S3_BUCKET_NAME']}/"
-SitemapGenerator::Sitemap.public_path = 'tmp/'
+SitemapGenerator::Sitemap.default_host = "https://www.budget-tour.ru"
+SitemapGenerator::Sitemap.sitemaps_host = "https://#{ENV['S3_BUCKET_NAME']}.s3.amazonaws.com"
+SitemapGenerator::Sitemap.public_path = 'tmp/sitemap'
 SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
-SitemapGenerator::Sitemap.adapter = SitemapGenerator::WaveAdapter.new
+SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter.new( 
+	aws_access_key_id: ENV["AWS_ACCESS_KEY_ID"],
+	aws_secret_access_key: ENV["AWS_SECRET_KEY"],
+	fog_provider: 'AWS',
+	fog_directory: ENV["S3_BUCKET_NAME"],
+	fog_region: ENV["AWS_REGION"]
+)
 
 SitemapGenerator::Sitemap.create do
-  url root_url, last_mod: Time.now, change_freq: "daily", priority: 1.0
-  url shops_url
-  Shop.all.each do |shop|
-  	url shop
+	#  url root_url, last_mod: Time.now, change_freq: "daily", priority: 1.0
+	#  url shops_url
+	#  Shop.all.each do |shop|
+	#  	url shop
+	#  end
+
+	#  url boats_url
+	#  Boat.all.each do |boat|
+	#  	url boat
+	#  end
+
+	#  url carts_url
+
+	#  url individual_tours_url
+	#  IndividualTour.all.each do |tour|
+	#  	url tour
+	#  end
+
+	#  url evening_shows_url
+	#  EveningShow.all.each do |tour|
+	#  	url tour
+	#  end
+
+	#  url avia_tours_url
+	#  AviaTour.all.each do |tour|
+	#  	url tour
+	#  end
+
+	#  url land_tours_url
+	#  LandTour.all.each do |tour|
+	#  	url tour
+	#  end
+
+	#  url phuket_tours_url
+	#  PhuketTour.all.each do |tour|
+	#  	url tour
+	#  end
+
+	# url sea_tours_url
+	#  SeaTour.all.each do |tour|
+	#  	url tour
+	#  end
+
+	#  url prices_url
+
+	#  url individual_url
+
+	#  url realty_rent_url
+
+	#  url realty_buy_url
+
+	#  url transfers_url
+
+	#  url photoshoot_url
+
+	#  url wedding_url
+
+	#  url spa_url
+
+ 	add root_path
+
+ 	add shops_path
+ 	Shop.find_each do |shop|
+   add shop_path
   end
 
-  url boats_url
-  Boat.all.each do |boat|
-  	url boat
+  add boats_path
+  Boat.find_each do |boat|
+   add boat_path
   end
 
-  url carts_url
+  add carts_path
 
-  url individual_tours_url
-  IndividualTour.all.each do |tour|
-  	url tour
+  add individual_tours_path
+  IndividualTour.find_each do |individual_tour|
+   add individual_tour_path
   end
 
-  url evening_shows_url
-  EveningShow.all.each do |tour|
-  	url tour
+  add evening_shows_path
+  EveningShow.find_each do |evening_show|
+   add evening_show_path
   end
 
-  url avia_tours_url
-  AviaTour.all.each do |tour|
-  	url tour
+  add avia_tours_path
+  AviaTour.find_each do |avia_tour|
+   add avia_tour_path
   end
 
-  url land_tours_url
-  LandTour.all.each do |tour|
-  	url tour
+  add land_tours_path
+  LandTour.find_each do |land_tour|
+   add land_tour_path
   end
 
-  url phuket_tours_url
-  PhuketTour.all.each do |tour|
-  	url tour
+  add phuket_tours_path
+  PhuketTour.find_each do |phuket_tour|
+   add phuket_tour_path
   end
 
-	url sea_tours_url
-  SeaTour.all.each do |tour|
-  	url tour
+  add sea_tours_path
+  SeaTour.find_each do |sea_tour|
+   add sea_tour_path
   end
 
-  url prices_url
+  add prices_path
 
-  url individual_url
+	add individual_path
 
-  url realty_rent_url
+	add realty_rent_path
 
-  url realty_buy_url
+	add realty_buy_path
 
-  url transfers_url
+	add transfers_path
 
-  url photoshoot_url
+	add photoshoot_path
 
-  url wedding_url
+	add wedding_path
 
-  url spa_url
+	add spa_path
 
 end
 

@@ -46,9 +46,7 @@ gem 'bcrypt'
 
 gem "table-for"
 
-gem 'whenever', require: false
-
-gem "dynamic_sitemaps"
+gem "sitemap_generator"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
