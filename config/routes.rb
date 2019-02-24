@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get '/photoshoot', to: 'static_pages#photoshoot'
   get '/wedding', to: 'static_pages#wedding'
   get '/spa', to: 'static_pages#spa'
+  get '/site-map', to: 'welcome#sitemap'
   # post '/commet', to: 'comments#create'
   resources :comments, only: [:create, :destroy]
 end

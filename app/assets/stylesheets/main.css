@@ -1047,13 +1047,13 @@ td, th {
 
 .side-menubar .menu-contact {
   position: absolute;
-  bottom: 20px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .side-menubar .menu-contact .email {
-  padding-bottom: 20px;
+  padding-bottom: 0;
   position: relative;
   width: 300px;
 }
@@ -1074,7 +1074,7 @@ td, th {
 }
 
 .side-menubar .menu-contact .social-contact {
-  padding-top: 20px;
+  padding-top: 10px;
   text-align: center;
 }
 
@@ -1234,7 +1234,7 @@ td, th {
 
 @media (max-width: 767px) {
   .header-17 .default-header .btn-group {
-    margin-right: 5px;
+    margin-right: 75px;
   }
   .header-17 .default-header .btn-first.color-17 {
     padding: 0 15px;

@@ -89,14 +89,16 @@
   }
   .header-17 .total-header-area .container .row.align-items-center {
     justify-content: space-around;
+    margin: 0;
+    max-width: 100%;
   }
   .total-brand-17 img {
     margin: 0;
   }
   .side-menubar nav {
-    max-height: 50%;
+    max-height: 55%;
     overflow: scroll;
-    top: 44%;
+    top: 47%;
     width: 211px;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
