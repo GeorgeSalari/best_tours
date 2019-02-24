@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   get '/photoshoot', to: 'static_pages#photoshoot'
   get '/wedding', to: 'static_pages#wedding'
   get '/spa', to: 'static_pages#spa'
-  get '/sitemap', to: 'welcome#sitemap'
+  get '/sitemap.xml.gz', to: redirect("https://#{ENV['AWS_REGION']}.amazonaws.com/#{ENV['S3_BUCKET_NAME']}/sitemap.xml.gz")
   # post '/commet', to: 'comments#create'
   resources :comments, only: [:create, :destroy]
 end
