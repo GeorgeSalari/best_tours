@@ -9,7 +9,7 @@
                         :data_row_html => {
                           :id => lambda { |sea_tour| "sea_tour-#{sea_tour.id}" }} do |table| %>
 
-    <% table.column :title, :header => "Название тура", :formatter => lambda { |title| title.upcase }  %>
+    <% table.column :title, :header => "Название тура", :formatter => lambda { |title| title.upcase }, :link_url => lambda { |tour| sea_tour_path(tour) }  %>
     <% table.column :short_content, :header => "Описаине" %>
     <% table.column :adult_price, :header => "Цена на взрослого" %>
     <% table.column :child_price, :header => "Цена на ребенка" %>
@@ -22,7 +22,7 @@
                         :data_row_html => {
                           :id => lambda { |land_tour| "land_tour-#{land_tour.id}" }} do |table| %>
 
-    <% table.column :title, :header => "Название тура", :formatter => lambda { |title| title.upcase }  %>
+    <% table.column :title, :header => "Название тура", :formatter => lambda { |title| title.upcase }, :link_url => lambda { |tour| land_tour_path(tour) }  %>
     <% table.column :short_content, :header => "Описаине" %>
     <% table.column :adult_price, :header => "Цена на взрослого" %>
     <% table.column :child_price, :header => "Цена на ребенка" %>
@@ -35,7 +35,7 @@
                         :data_row_html => {
                           :id => lambda { |evening_show| "evening_show-#{evening_show.id}" }} do |table| %>
 
-    <% table.column :title, :header => "Название тура", :formatter => lambda { |title| title.upcase }  %>
+    <% table.column :title, :header => "Название тура", :formatter => lambda { |title| title.upcase }, :link_url => lambda { |tour| evening_show_path(tour) }  %>
     <% table.column :short_content, :header => "Описаине" %>
     <% table.column :adult_price, :header => "Цена на взрослого" %>
     <% table.column :child_price, :header => "Цена на ребенка" %>
@@ -48,7 +48,7 @@
                         :data_row_html => {
                           :id => lambda { |phuket_tour| "phuket_tour-#{phuket_tour.id}" }} do |table| %>
 
-    <% table.column :title, :header => "Название тура", :formatter => lambda { |title| title.upcase }  %>
+    <% table.column :title, :header => "Название тура", :formatter => lambda { |title| title.upcase }, :link_url => lambda { |tour| phuket_tour_path(tour) }  %>
     <% table.column :short_content, :header => "Описаине" %>
     <% table.column :adult_price, :header => "Цена на взрослого" %>
     <% table.column :child_price, :header => "Цена на ребенка" %>
@@ -61,7 +61,7 @@
                         :data_row_html => {
                           :id => lambda { |avia_tour| "avia_tour-#{avia_tour.id}" }} do |table| %>
 
-    <% table.column :title, :header => "Название тура", :formatter => lambda { |title| title.upcase }  %>
+    <% table.column :title, :header => "Название тура", :formatter => lambda { |title| title.upcase }, :link_url => lambda { |tour| avia_tour_path(tour) }  %>
     <% table.column :short_content, :header => "Описаине" %>
     <% table.column :adult_price, :header => "Цена на взрослого" %>
     <% table.column :child_price, :header => "Цена на ребенка" %>
@@ -75,7 +75,7 @@
                           :class => 'header-no-price',
                           :id => lambda { |shop| "shop-#{shop.id}" }} do |table| %>
 
-    <% table.column :title, :header => "Название тура", :formatter => lambda { |title| title.upcase }  %>
+    <% table.column :title, :header => "Название тура", :formatter => lambda { |title| title.upcase }, :link_url => lambda { |tour| shop_path(tour) }  %>
     <% table.column :short_content, :header => "Описаине" %>
     <% table.column :adult_price, :header => "Цена",
                     :header_column_html => {
@@ -90,7 +90,7 @@
                           :class => 'header-no-price check-price',
                           :id => lambda { |boat| "boat-#{boat.id}" }} do |table| %>
 
-    <% table.column :title, :header => "Название тура", :formatter => lambda { |title| title.upcase }  %>
+    <% table.column :title, :header => "Название тура", :formatter => lambda { |title| title.upcase }, :link_url => lambda { |tour| boat_path(tour) }  %>
     <% table.column :short_content, :header => "Описаине" %>
     <% table.column :adult_price, :header => "Цена",
                     :header_column_html => {
@@ -104,7 +104,7 @@
                           :class => 'header-no-price check-price',
                           :id => lambda { |tour| "tour-#{tour.id}" }} do |table| %>
 
-    <% table.column :title, :header => "Название тура", :formatter => lambda { |title| title.upcase }  %>
+    <% table.column :title, :header => "Название тура", :formatter => lambda { |title| title.upcase } %>
     <% table.column :short_content, :header => "Описаине" %>
     <% table.column :adult_price, :header => "Цена",
                     :header_column_html => {
