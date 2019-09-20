@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   post   '/admin',   to: 'sessions#create'
   get '/signout' => 'sessions#destroy'
   get '/individual', to: 'static_pages#individual'
+  get '/license', to: 'static_pages#license'
   get '/realty-rent', to: 'static_pages#realty_rent'
   get '/realty-buy', to: 'static_pages#realty_buy'
   get '/transfers', to: 'static_pages#transfer'

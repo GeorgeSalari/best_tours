@@ -91,6 +91,9 @@ class StaticPagesController < ApplicationController
     end
   end
 
+  def license
+  end
+
 private
   def check_error
     flash[:success] = 'Что то пошло не так, извините!'
