@@ -40,8 +40,26 @@
   p.phone,
   p.mail,
   #social-link-container a {
-    line-height: 46px;
+    line-height: 23px;
     margin: 0;
+  }
+
+  p.mail,
+  #social-link-container a,
+  .phone-img,
+  .phone-box {
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    display:box;
+    box-pack:center;
+    box-align:center;
+    display:-moz-box;
+    -moz-box-pack:center;
+    -moz-box-align:center;
+    display:-ms-flexbox;
+    -ms-flex-pack:center;
+    -ms-flex-align:center;
   }
 
   .total-header-area {
