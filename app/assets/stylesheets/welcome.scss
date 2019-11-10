@@ -81,6 +81,11 @@
   position: absolute;
 }
 
+.asana-banner img.phone-img {
+  height: auto;
+  width: auto;
+}
+
 .asana-banner .main-container {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.3);
@@ -113,10 +118,12 @@ p.phone img, p.mail img {
 
 .asana-banner .main-container .contact-info .container p {
   color: white;
+  margin-bottom: 0;
+  padding-left: 20px;
 }
 
-.asana-banner .main-container .contact-info .container p:first-child {
-  margin-bottom: 0;
+.asana-banner .main-container .contact-info .container p.mail {
+  padding-left: 0;
 }
 
 .asana-banner .contact-info img {
