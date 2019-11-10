@@ -86,7 +86,7 @@
               <%= f.text_field :customer_phone, placeholder: "Телефон", :required => true, autocomplete: 'tel' %>
             </div>
             <div class="col-6">
-              <%= f.email_field :customer_email, placeholder: "E-mail", autocomplete: 'email' %>
+              <%= f.text_field :customer_email, placeholder: "Ваш отель", :required => true, autocomplete: 'hotel' %>
             </div>
           </div>
           <%= f.text_area :customer_comment, placeholder: "Комментарий", autocomplete: false %>
