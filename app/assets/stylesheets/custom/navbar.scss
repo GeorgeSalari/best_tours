@@ -27,7 +27,7 @@
 
   .call-request {
     position: relative;
-    top: 8px;
+    top: 0;
     left: 10px;
     color: #f5a623;
     border-color: #f5a623;
@@ -56,7 +56,8 @@
   p.mail,
   #social-link-container a,
   .phone-img,
-  .phone-box {
+  .phone-box,
+  #main-menu-container {
     display: -webkit-box;
     -webkit-box-pack: center;
     -webkit-box-align: center;
