@@ -4714,6 +4714,7 @@ p.mail a {
 }
 
 .images-container .mask p {
+  position: relative;
   font-family: Lato;
   font-size: 36px;
   font-weight: bold;
