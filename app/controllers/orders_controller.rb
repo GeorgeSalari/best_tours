@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
       @cart.remove_product(@order.product_id, @order.product_type)
       flash[:success] = 'Спасибо за бронирование, мы скоро с вами свяжимся!'
       UserMailer.with(order: @order).tour_request.deliver_later
-      redirect_back fallback_location: root_path
+      redirect_back fallback_location: success_path
     else
       flash[:error] = 'Что то пошло не так, попробуйте снова.'
       redirect_back fallback_location: root_path
@@ -16,7 +16,7 @@ class OrdersController < ApplicationController
     if @cart.order_all(params)
       session[:cart_id] = nil
       flash[:success] = 'Спасибо за бронирование, мы скоро с вами свяжимся!'
-      redirect_to root_path
+      redirect_to success_path
     else
       flash[:error] = 'Что то пошло не так, попробуйте снова.'
       redirect_back fallback_location: root_path

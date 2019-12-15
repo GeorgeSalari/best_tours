@@ -38,6 +38,9 @@ class StaticPagesController < ApplicationController
     @comments = Comment.where(tour_type: "StaticPage", tour_id: 2)
   end
 
+  def success_page
+  end
+
   def new
     if logged_in?
       @static_page = StaticPage.new
