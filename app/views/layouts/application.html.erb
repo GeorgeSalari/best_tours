@@ -53,6 +53,11 @@
   </head>
 
   <body class="home-17">
+    <button class='call-request-scroll' data-toggle="modal" data-target="#orderCall">
+      <%= image_tag 'phone_order.svg', id: 'phone-order-image' %>
+    </button>
+
+    <%= render 'shared/order_call_modale' %>
 
     <%= yield %>
 
