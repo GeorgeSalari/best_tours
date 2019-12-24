@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :new_order, :new_call_order, only: [:new]
+
   def new
     @user = User.new
   end
