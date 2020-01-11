@@ -1,6 +1,6 @@
 class LandToursController < ApplicationController
   before_action :set_land_tour, only: [:show, :edit, :update, :destroy]
-  before_action :new_order, :new_call_order, only: [:index, :show]
+  before_action :new_order, :new_call_order, only: [:index, :show, :edit]
   rescue_from NoMethodError, :with => :check_error
 
   # GET /land_tours
