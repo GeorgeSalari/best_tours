@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-  before_action :new_order, :new_call_order, only: [:individual, :realty_rent, :realty_buy, :transfer, :photoshoot, :wedding, :spa, :success_page, :license]
+  before_action :new_order, :new_call_order, only: [:individual, :realty_rent, :realty_buy, :transfer, :photoshoot, :wedding, :spa, :success_page, :license, :db_check]
   rescue_from NoMethodError, :with => :check_error
   before_action :set_static_page, only: [:edit, :update, :edit]
 
@@ -39,6 +39,12 @@ class StaticPagesController < ApplicationController
   end
 
   def success_page
+  end
+
+  def db_check
+    unless logged_in?
+      redirect_to root_path, notice: 'У вас нет прав, зайдите под админа!'
+    end
   end
 
   def new
@@ -95,6 +101,26 @@ class StaticPagesController < ApplicationController
   end
 
   def license
+  end
+
+  def clean_15_days
+    if logged_in?
+      Cart.where('updated_at < ?',  Date.today - 15.day).destroy_all
+      redirect_to db_check_path, notice: 'Вы удалили все строги старше 15 дней!'
+    else
+      flash[:success] = 'У вас нет доступа!'
+      redirect_to root_path
+    end
+  end
+
+  def clean_30_days
+    if logged_in?
+      Cart.where('updated_at < ?',  Date.today - 30.day).destroy_all
+      redirect_to db_check_path, notice: 'Вы удалили все строги старше 30 дней!'
+    else
+      flash[:success] = 'У вас нет доступа!'
+      redirect_to root_path
+    end
   end
 
 private

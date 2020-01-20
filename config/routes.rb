@@ -27,8 +27,11 @@ Rails.application.routes.draw do
   get '/photoshoot', to: 'static_pages#photoshoot'
   get '/wedding', to: 'static_pages#wedding'
   get '/spa', to: 'static_pages#spa'
+  get '/db_check', to: 'static_pages#db_check'
   get '/success', to: 'static_pages#success_page'
   get '/sitemap.xml.gz', to: redirect("https://s3-ap-southeast-1.amazonaws.com/coco-travel/sitemaps/sitemap.xml.gz", status: 301), as: :sitemap
   # post '/commet', to: 'comments#create'
   resources :comments, only: [:create, :destroy]
+  post 'clean_15_days', to: 'static_pages#clean_15_days'
+  post 'clean_30_days', to: 'static_pages#clean_30_days'
 end

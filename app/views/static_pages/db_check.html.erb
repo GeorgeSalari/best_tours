@@ -1,0 +1,14 @@
+<div class="container">
+	<h1 class="text-center mb-5">Информация о базе дыннх</h1>
+	<%= render 'shared/flash' %>
+	<h4>Всего строк в базе: <span class='font-weight-bold' style="color: red;"><%= Cart.all.count %></span></h4>
+	<br>
+	<h4>Всего за последний день: <span class='font-weight-bold' style="color: red;"><%= Cart.where('updated_at >= ?',  Date.today).count %></span></h4>
+	<br>
+	<h4>Всего за последнюю неделю: <span class='font-weight-bold' style="color: red;"><%= Cart.where('updated_at >= ?',  Date.today - 7.day).count %></span> </h4>
+	<br>
+	<h4>Старше 15 дней: <span class='font-weight-bold' style="color: red;"><%= Cart.where('updated_at < ?',  Date.today - 15.day).count %></span></h4><%= link_to "УДАЛИТЬ", clean_15_days_path, method: :post, class: 'btn btn-danger' %>
+	<br>
+	<br>
+	<h4>Старше 30 дней: <span class='font-weight-bold' style="color: red;"><%= Cart.where('updated_at < ?',  Date.today - 30.day).count %></span></h4><%= link_to "УДАЛИТЬ", clean_30_days_path, method: :post, class: 'btn btn-danger' %>
+</div>
