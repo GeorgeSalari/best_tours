@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'nokogiri', '~> 1.8', '>= 1.8.4'
 gem "figaro"
-gem 'bootstrap', '~> 4.1.2'
+gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 
 # Use carrierwave to upload file
