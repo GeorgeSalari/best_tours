@@ -5,7 +5,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.5'
+gem 'rails', '~> 7.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -40,7 +40,7 @@ gem 'carrierwave', '~> 1.0'
 # Use minimagick to resize upload file
 gem "mini_magick"
 # Use fog for upload to aws
-gem 'fog'
+gem 'fog-aws', '~> 3.12'
 
 gem 'bcrypt'
 
