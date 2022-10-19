@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'nokogiri', '~> 1.8', '>= 1.8.4'
+gem 'nokogiri', '~> 1.13'
 gem "figaro"
 gem 'bootstrap', '~> 5.1', '>= 5.1.3'
 gem 'jquery-rails'
